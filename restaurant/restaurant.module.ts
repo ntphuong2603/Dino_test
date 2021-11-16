@@ -10,4 +10,4 @@ import { RestaurantController } from './restaurant.controller'
   controllers: [RestaurantController],
 })
 
-export class RestaurantModule {}
+export class RestaurantModule {}   

@@ -2,7 +2,7 @@ import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from "typeorm";
 import { Restaurant } from "../restaurant/restaurant.entity";
 
 @Entity()
-export class RestaurantService {
+export class Category {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -12,4 +12,6 @@ export class RestaurantService {
   @Column()
   description: string;
 
+  @ManyToOne( () => Restaurant, restaurant => restaurant.services)
+  restaurant: Restaurant
 }

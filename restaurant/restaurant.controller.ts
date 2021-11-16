@@ -1,11 +1,13 @@
 import { Body, Param, Controller, Get, Post } from '@nestjs/common'
+import { CategoryService } from '../category/caterory.service';
 import { Restaurant } from './restaurant.entity'
 import { RestaurantService } from './restaurant.service'
 
 @Controller('restaurants')
 export class RestaurantController {
   constructor(
-    private restaurantService: RestaurantService
+    private restaurantService: RestaurantService,
+    // private categoryService: CategoryService,
   ) {}
 
   @Get('/getAll')
@@ -27,7 +29,14 @@ export class RestaurantController {
 
   @Post('/create')
   create(@Body() restaurant: Restaurant) {
-    // console.log('Restaurant:', restaurant);
+    console.log('Restaurant:', restaurant);
+    // const services = restaurant.services
+    // var restaurantServices = []
+    // services.forEach(function id(){
+    //   const service = this.restaurantServiceService.find(id)
+    //   restaurantServices.push(service)
+    // })
+    // restaurant.services = services
     return this.restaurantService.create(restaurant)
   }
 

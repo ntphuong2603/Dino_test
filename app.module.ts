@@ -4,13 +4,13 @@ import { Connection } from 'typeorm'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
 import { RestaurantModule } from './restaurant/restaurant.module'
-import { RestaurantServiceModule } from './restaurant_service/restaurantService.module'
+import { CategoryModule } from './category/category.module'
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(),
     RestaurantModule,
-    RestaurantServiceModule,
+    CategoryModule,
   ],
   controllers: [AppController],
   providers: [AppService],

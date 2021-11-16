@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm";
-import { RestaurantService } from "../restaurant_service/restaurantService.entity";
+import { Category } from "../category/category.entity";
 
 @Entity()
 export class Restaurant {
@@ -15,7 +15,6 @@ export class Restaurant {
   @Column({default:true})
   isActive: boolean;
 
-  @OneToMany( () => RestaurantService, restaurantService => restaurantService.id)
-  services: RestaurantService[]
-
+  @OneToMany( () => Category, category => category.restaurant)
+  services: Category[]
 }

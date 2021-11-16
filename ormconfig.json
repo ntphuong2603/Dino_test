@@ -1,10 +1,10 @@
 {
   "type": "mysql",
-  "host": "remotemysql.com",
+  "host": "db4free.net",
   "port": 3306,
-  "username": "GC2H1u77vF",
-  "password": "KWx7SGnemn",
-  "database": "GC2H1u77vF",
+  "username": "ntphuong2603",
+  "password": "0410@Huong",
+  "database": "dino_db",
   "entities": ["dist/**/*.entity{.ts,.js}"],
   "synchronize": true
 }

@@ -19,8 +19,9 @@ export class RestaurantService {
   }
 
   async create(restaurant: Restaurant) {
-    this.restaurantRepository.save(restaurant)
-    // return null
+    console.log('Restaurant create:', restaurant);
+    await this.restaurantRepository.save(restaurant)
+    return restaurant
   }
 
   async edit(id: number, restaurant: Restaurant) : Promise<Restaurant> {
@@ -35,6 +36,7 @@ export class RestaurantService {
     restaurantEdited.isActive = restaurant.isActive
 
     await this.restaurantRepository.save(restaurantEdited)
+    console.log('Edited restaurant:', restaurantEdited); 
     return restaurantEdited
   }
 }
