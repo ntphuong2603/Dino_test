@@ -1,8 +1,6 @@
 import { Module } from '@nestjs/common'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { Connection } from 'typeorm'
-import { AppController } from './app.controller'
-import { AppService } from './app.service'
 import { RestaurantModule } from './restaurant/restaurant.module'
 import { CategoryModule } from './category/category.module'
 
@@ -12,8 +10,6 @@ import { CategoryModule } from './category/category.module'
     RestaurantModule,
     CategoryModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 
 export class AppModule {
